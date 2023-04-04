@@ -1,0 +1,20 @@
+.arrangement-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 90%;
+}
+
+.tiles-list {
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+.element-tile {
+  margin: 5px;
+  padding: 0px 5px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: lightblue;
+  cursor: pointer;
+}

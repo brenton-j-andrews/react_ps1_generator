@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import ElementSelector from './components/Element_Selector/ElementSelector';
+import Arrangement from "./components/Arrangement_Menu/Arrangement";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -21,6 +22,8 @@ function App() {
         </header>
 
         <ElementSelector setPromptElements={setPromptElements}/>
+
+        <Arrangement promptElements={promptElements}/>
 
       </div>
     </div>
