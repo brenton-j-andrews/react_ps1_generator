@@ -2,55 +2,77 @@ import { Tab, Tabs } from "react-bootstrap";
 
 import './element_selector.css';
 
-const ElementSelector = () => {
+const ElementSelector = ({ setPromptElements }) => {
 
   const basic_elements = [
     {
       "readable" : "Username",
       "display" : "user",
       "prompt_text" : "\\u",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Hostname",
       "display" : "host",
       "prompt_text" : "\\h",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "FQDN",
       "display" : "host.domain.com",
       "prompt_text" : "\\H",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Shell",
       "display" : "bash",
       "prompt_text" : "\\s",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Shell Version",
       "display" : "4.3",
       "prompt_text" : "\\v",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Shell Release",
       "display" : "4.3.43",
       "prompt_text" : "\\V",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Path to Current Directory",
       "display" : "~/dir",
       "prompt_text" : "\\w",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "Current Directory",
       "display" : "dir",
       "prompt_text" : "\\W",
+      "font_color" : null,
+      "bg_color" : null
     },
     {
       "readable" : "$",
       "display" : "$",
       "prompt_text" : "\\$",
+      "font_color" : null,
+      "bg_color" : null
     },
   ]
+
+  const handleClick = (element) => {
+    setPromptElements(prevState => [...prevState, element]);
+  }
 
   return (
     <div className="element-selector-wrapper">
@@ -64,22 +86,22 @@ const ElementSelector = () => {
             <ul className="elements_list">
               {basic_elements.map(element => {
                 return (
-                  <li className="element_selector" key={element.readable}> { element.readable } </li>
+                  <li className="element_selector" onClick={() => {handleClick(element)}}key={element.readable}> { element.readable } </li>
                 )
               })}
             </ul>
           </Tab>
 
           <Tab eventKey="status_elements" title="Status Elements">
-            This is a test! status
+            Do status elements later my man!
           </Tab>
 
           <Tab eventKey="dt_elements" title="Date & Time Elements">
-            This is a test! dt
+            Do status elements later my man!
           </Tab>
 
           <Tab eventKey="characters" title="Characters">
-            This is a test! Chars 
+            Do status elements later my man!
           </Tab>
 
          </Tabs>  
