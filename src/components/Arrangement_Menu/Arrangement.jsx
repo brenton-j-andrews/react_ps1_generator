@@ -1,15 +1,29 @@
 // This component displays elements selected from the menu. From here, the user can rearrange elements, select colors and delete elements. 
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 import "./arrangement.css";
 import "../../app.css";
 
-const Arrangement = ({ promptElements }) => {
+const Arrangement = ({ promptElements, setPromptElements }) => {
 
-  const [ selectedElement, setSelectedElement ] = useState(null);
+  const [ selectedElement, setSelectedElement ] = useState(promptElements[promptElements.length - 1] || null);
+  
+  // Effect: update selected element to last element in promptElements array when it is updated.
+  useEffect(() => {
+    setSelectedElement(promptElements[promptElements.length - 1]);
+  }, [ promptElements ])
 
   const handleElementClick = (element) => {
     setSelectedElement(element);
+  }
+
+  const deleteElement = () => {
+    const updatedPromptElements = promptElements.filter(element => element.id !== selectedElement.id);
+    setPromptElements(updatedPromptElements);
+  }
+
+  const deleteAllElements = () => {
+    setPromptElements([]);
   }
 
   return (
@@ -19,11 +33,21 @@ const Arrangement = ({ promptElements }) => {
       <div className="arrangement-wrapper">
         <ul className="tiles-list">
           {promptElements.map(element => {
+
             return (
-              <li className="element-tile" key={element.id} onClick={() => {handleElementClick(element)}}> {element.readable } </li>
+              <li 
+              className={element.id === selectedElement?.id ? "element-tile active" : "element-tile"}
+              key={element.id} 
+              onClick={() => {handleElementClick(element)}}
+              > {element.readable } </li>
             )
           })}
         </ul>
+      </div>
+
+      <div className="arrangement-controls mt-2">
+        <button className="delete-element-button" onClick={deleteElement}> Delete Element </button>
+        <button className="delete-element-button" onClick={deleteAllElements}> Clear Elements </button>
       </div>
     </div>
   )

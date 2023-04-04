@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   margin: 0px;
   padding: 0px;
+  background-color: white;
 }
 
 .element-selector {
@@ -15,6 +16,7 @@
   margin: 5px;
   display: inline-block;
   background-color: lightblue;
+  color: black;
   cursor: pointer;
 }
 

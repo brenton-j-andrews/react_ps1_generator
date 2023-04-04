@@ -18,3 +18,8 @@
   background-color: lightblue;
   cursor: pointer;
 }
+
+.active {
+  color: white;
+  background-color: green;
+}

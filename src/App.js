@@ -10,10 +10,6 @@ function App() {
 
   const [ promptElements, setPromptElements ] = useState([]);
 
-  useEffect(() => {
-    console.log(promptElements);
-  }, [promptElements]);
-
   return (
     <div className="app-wrapper">
       <div className="app-container">
@@ -23,7 +19,7 @@ function App() {
 
         <ElementSelector setPromptElements={setPromptElements}/>
 
-        <Arrangement promptElements={promptElements}/>
+        <Arrangement promptElements={promptElements} setPromptElements={setPromptElements}/>
 
       </div>
     </div>
