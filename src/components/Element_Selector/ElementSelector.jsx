@@ -1,5 +1,5 @@
 // This component contains the menu from which you can select elements for your prompt.
-
+import { format } from "date-fns";
 import { Tab, Tabs } from "react-bootstrap";
 
 import "../../app.css";
@@ -100,20 +100,20 @@ const ElementSelector = ({ setPromptElements }) => {
       "bg_color" : null
     },
   ]
+  // new Date().toLocaleDateString('en-us', { weekday: "short", month: "short", day: "numeric"}).replace(',',''),
 
   const date_time_elements = [
     {
       "id" : null,
       "readable" : "Date",
-      "display" : "Tue Apr 04",
-      "prompt_text" : "\\d",
+      "display" : format(new Date(), "E LLL d"),
       "font_color" : "#fff",
       "bg_color" : null
     },
     {
       "id" : null,
       "readable" : "24HR Time",
-      "display" : "18:17",
+      "display" : format(new Date(), "HH:mm"),
       "prompt_text" : "\\A",
       "font_color" : "#fff",
       "bg_color" : null
@@ -121,7 +121,7 @@ const ElementSelector = ({ setPromptElements }) => {
     {
       "id" : null,
       "readable" : "12HR Time",
-      "display" : "06:17 PM",
+      "display" : format(new Date(), "KK:mm a"),
       "prompt_text" : "\\@",
       "font_color" : "#fff",
       "bg_color" : null
@@ -129,7 +129,7 @@ const ElementSelector = ({ setPromptElements }) => {
     {
       "id" : null,
       "readable" : "24HR Time w/Seconds",
-      "display" : "18:17:32",
+      "display" : format(new Date(), "HH:mm:ss"),
       "prompt_text" : "\\t",
       "font_color" : "#fff",
       "bg_color" : null
@@ -137,7 +137,7 @@ const ElementSelector = ({ setPromptElements }) => {
     {
       "id" : null,
       "readable" : "12HR Time w/Seconds",
-      "display" : "06:17:43 PM",
+      "display" :  format(new Date(), "KK:mm:ss a"),
       "prompt_text" : "\\T",
       "font_color" : "#fff",
       "bg_color" : null
