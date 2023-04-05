@@ -1,26 +1,54 @@
 .element-selector-menu {
-  background-color: white;
+  background-color: fc945c;
   width: 90%;
+  min-height: 175px;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.nav-item {
+  margin: 0px 5px;
+  background-color: #1d8698;
+  border-radius: 5px;
+  height: 45px;
+}
+
+.nav-item > button {
+  background-color: #1d8698;
+  color: white;
+  border-radius: 5px;
+  height: 45px;
+
+}
+
+.nav-link > button {
+  background-color: #1d8698;
 }
 
 .elements-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0px;
-  padding: 0px;
+  margin: 10px 0px;
+  padding: 10px;
   background-color: white;
+  border-radius: 5px;
+  height: 110px;
 }
 
 .element-selector {
-  padding: 10px;
+  padding: 5px 10px;
   margin: 5px;
+  border-radius: 5px;
   display: inline-block;
-  background-color: lightblue;
-  color: black;
+  background-color: #1d8698;
+  color: white;
   cursor: pointer;
+  height: 35px;
 }
 
 .element-selector:hover {
   transition: 1s;
-  background-color: rgb(119, 147, 156);
+  background-color: #fc945c;
 }

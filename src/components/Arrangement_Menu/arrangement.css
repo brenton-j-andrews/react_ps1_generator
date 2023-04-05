@@ -3,6 +3,9 @@
   align-items: center;
   background-color: white;
   width: 90%;
+  padding: 10px;
+  min-height: 75px;
+  border-radius: 5px;
 }
 
 .tiles-list {
@@ -15,11 +18,51 @@
   padding: 0px 5px;
   border-radius: 5px;
   display: inline-block;
-  background-color: lightblue;
+  background-color: #fc945c;
+  color: white;
   cursor: pointer;
 }
 
 .active {
   color: white;
-  background-color: green;
+  background-color: #1d8698;
 }
+
+.arrangement-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.delete-element-button {
+  margin: 0px 5px;
+  background-color: #1d8698;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.font-color-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-color-dropdown-action {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-left: 5px;
+  width: 75px;
+  height: 50px;
+  background-color: black;
+}
+
+.font-color-preview {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+}
+

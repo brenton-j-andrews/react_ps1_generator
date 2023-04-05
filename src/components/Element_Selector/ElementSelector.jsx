@@ -82,6 +82,135 @@ const ElementSelector = ({ setPromptElements }) => {
     },
   ]
 
+  const status_elements = [
+    {
+      "id" : null,
+      "readable" : "Error Code",
+      "display" : "1",
+      "prompt_text" : "\\u",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "Git Status",
+      "display" : "[master]",
+      "prompt_text" : "\\h",
+      "font_color" : null,
+      "bg_color" : null
+    },
+  ]
+
+  const date_time_elements = [
+    {
+      "id" : null,
+      "readable" : "Date",
+      "display" : "Tue Apr 04",
+      "prompt_text" : "\\d",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "24HR Time",
+      "display" : "18:17",
+      "prompt_text" : "\\A",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "12HR Time",
+      "display" : "06:17 PM",
+      "prompt_text" : "\\@",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "24HR Time w/Seconds",
+      "display" : "18:17:32",
+      "prompt_text" : "\\t",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "12HR Time w/Seconds",
+      "display" : "06:17:43 PM",
+      "prompt_text" : "\\T",
+      "font_color" : null,
+      "bg_color" : null
+    }
+  ]
+
+  const extra_characters = [
+    {
+      "id" : null,
+      "readable" : "@",
+      "display" : "@",
+      "prompt_text" : "@",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : ":",
+      "display" : ":",
+      "prompt_text" : ":",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "[",
+      "display" : "[",
+      "prompt_text" : "[",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "]",
+      "display" : "]",
+      "prompt_text" : "]",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "-",
+      "display" : "-",
+      "prompt_text" : "-",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "_",
+      "display" : "_",
+      "prompt_text" : "_",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : "*",
+      "display" : "*",
+      "prompt_text" : "*",
+      "font_color" : null,
+      "bg_color" : null
+    },
+    {
+      "id" : null,
+      "readable" : ">",
+      "display" : ">",
+      "prompt_text" : ">",
+      "font_color" : null,
+      "bg_color" : null
+    }
+  ]
+
   const handleClick = (element) => {
     element.id = crypto.randomUUID();
     setPromptElements(prevState => [...prevState, element]);
@@ -92,7 +221,7 @@ const ElementSelector = ({ setPromptElements }) => {
       <h2 className='instruction-prompt'> Step 1: Select elements to use in your prompt. </h2>
 
       <div className="element-selector-menu">
-         <Tabs defaultActiveKey="basic_elements" justify>
+         <Tabs defaultActiveKey="basic_elements" className="tabs-selector" justify>
 
           <Tab eventKey="basic_elements" title="Basic Elements">
 
@@ -106,15 +235,33 @@ const ElementSelector = ({ setPromptElements }) => {
           </Tab>
 
           <Tab eventKey="status_elements" title="Status Elements">
-            Do status elements later my man!
+            <ul className="elements-list">
+              {status_elements.map(element => {
+                return (
+                  <li className="element-selector" onClick={() => {handleClick(element)}} key={element.readable}> { element.readable } </li>
+                )
+              })}
+            </ul>
           </Tab>
 
-          <Tab eventKey="dt_elements" title="Date & Time Elements">
-            Do status elements later my man!
+          <Tab eventKey="dt_elements" title="Date Elements">
+            <ul className="elements-list">
+              {date_time_elements.map(element => {
+                return (
+                  <li className="element-selector" onClick={() => {handleClick(element)}} key={element.readable}> { element.readable } </li>
+                )
+              })}
+            </ul>
           </Tab>
 
           <Tab eventKey="characters" title="Characters">
-            Do status elements later my man!
+            <ul className="elements-list">
+              {extra_characters.map(element => {
+                return (
+                  <li className="element-selector" onClick={() => {handleClick(element)}} key={element.readable}> { element.readable } </li>
+                )
+              })}
+            </ul>
           </Tab>
 
          </Tabs>  
