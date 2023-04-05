@@ -23,8 +23,8 @@ function App() {
         <Arrangement promptElements={promptElements} setPromptElements={setPromptElements}/>
 
         <Preview promptElements={promptElements}/>
-
-      </div>
+ 
+       </div>
     </div>
   );
 }

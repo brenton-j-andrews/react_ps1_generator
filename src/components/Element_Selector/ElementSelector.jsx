@@ -13,7 +13,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Username",
       "display" : "user",
       "prompt_text" : "\\u",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -21,7 +21,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Hostname",
       "display" : "host",
       "prompt_text" : "\\h",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -29,7 +29,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "FQDN",
       "display" : "host.domain.com",
       "prompt_text" : "\\H",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -37,7 +37,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Shell",
       "display" : "bash",
       "prompt_text" : "\\s",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -45,7 +45,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Shell Version",
       "display" : "4.3",
       "prompt_text" : "\\v",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -53,7 +53,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Shell Release",
       "display" : "4.3.43",
       "prompt_text" : "\\V",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -61,7 +61,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Path to Current Directory",
       "display" : "~/dir",
       "prompt_text" : "\\w",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -69,7 +69,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Current Directory",
       "display" : "dir",
       "prompt_text" : "\\W",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -77,7 +77,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "$",
       "display" : "$",
       "prompt_text" : "\\$",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
   ]
@@ -88,7 +88,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Error Code",
       "display" : "1",
       "prompt_text" : "\\u",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -96,7 +96,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Git Status",
       "display" : "[master]",
       "prompt_text" : "\\h",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
   ]
@@ -107,7 +107,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "Date",
       "display" : "Tue Apr 04",
       "prompt_text" : "\\d",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -115,7 +115,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "24HR Time",
       "display" : "18:17",
       "prompt_text" : "\\A",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -123,7 +123,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "12HR Time",
       "display" : "06:17 PM",
       "prompt_text" : "\\@",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -131,7 +131,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "24HR Time w/Seconds",
       "display" : "18:17:32",
       "prompt_text" : "\\t",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -139,7 +139,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "12HR Time w/Seconds",
       "display" : "06:17:43 PM",
       "prompt_text" : "\\T",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     }
   ]
@@ -150,7 +150,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "@",
       "display" : "@",
       "prompt_text" : "@",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -158,7 +158,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : ":",
       "display" : ":",
       "prompt_text" : ":",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -166,7 +166,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "[",
       "display" : "[",
       "prompt_text" : "[",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -174,7 +174,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "]",
       "display" : "]",
       "prompt_text" : "]",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -182,7 +182,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "-",
       "display" : "-",
       "prompt_text" : "-",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -190,7 +190,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "_",
       "display" : "_",
       "prompt_text" : "_",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -198,7 +198,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : "*",
       "display" : "*",
       "prompt_text" : "*",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     },
     {
@@ -206,7 +206,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : ">",
       "display" : ">",
       "prompt_text" : ">",
-      "font_color" : null,
+      "font_color" : "#fff",
       "bg_color" : null
     }
   ]

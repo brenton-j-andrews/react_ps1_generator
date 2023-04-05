@@ -8,6 +8,10 @@ import "../../app.css";
 const Arrangement = ({ promptElements, setPromptElements }) => {
 
   const [ selectedElement, setSelectedElement ] = useState(promptElements[promptElements.length - 1] || null);
+
+  const [ displayFontColorPalette, setDisplayFontColorPalette ] = useState(false);
+
+  const colors = ["#FF0000", "#008000","#0000ff", "#FFFF00", "#00FFFF", "#FF00FF", "#000", "#fff"];
   
   // Effect: update selected element to last element in promptElements array when it is updated.
   useEffect(() => {
@@ -23,8 +27,17 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     setPromptElements(updatedPromptElements);
   }
 
-  const deleteAllElements = () => {
-    setPromptElements([]);
+  const updateElementColor = (color) => {
+    setDisplayFontColorPalette(false);
+
+    let updatedElements = promptElements.map(element => {
+      if (element.id === selectedElement.id) {
+        return { ...element, font_color:color }
+      }
+      return element;
+    })
+
+    setPromptElements(updatedElements);
   }
 
   return (
@@ -57,9 +70,25 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
           <div className="font-color-selector">
             <span className="color-select-label"> Font Color </span>
             
-            <div className="font-color-selector-box">
-              <i className="down-arrow"></i>
+            <div className="font-color-selector-box" >
+              <div className="color-preview-box" style={{ backgroundColor : selectedElement?.font_color }}></div>
+              <i className="down-arrow" onClick={() => {setDisplayFontColorPalette(!displayFontColorPalette)}}></i>
             </div>
+
+            {displayFontColorPalette &&
+              <div className="color-palette">
+                {colors.map((color, index) => {
+                  return (
+                    <div
+                      onClick={() => {updateElementColor(color)}} 
+                      className="color-sample" 
+                      style={{ backgroundColor : color }}
+                      key={index} 
+                    />
+                  )
+                })}
+              </div>
+            }
           </div>
 
           <div className="font-color-selector">
@@ -72,7 +101,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
         </div>
 
         <div className="controls-right">
-          <button className="delete-element-button" onClick={deleteAllElements}> Clear All </button>
+          <button className="delete-element-button" onClick={() => {setPromptElements([])}}> Clear All </button>
           <button className="delete-element-button"> Reset All </button>
         </div>
       </div>
