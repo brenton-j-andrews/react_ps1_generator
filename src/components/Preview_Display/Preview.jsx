@@ -9,7 +9,7 @@ const Preview = ({ promptElements }) => {
       <div className="preview-wrapper">
         {promptElements.map((element, index) => {
           return (
-            <span style={{ color : element.font_color }} key={index}> { element.display }</span>
+            <span style={{ color : element.font_color, backgroundColor : element.bg_color }} key={index}> { element.display }</span>
           )
         })}
       </div>

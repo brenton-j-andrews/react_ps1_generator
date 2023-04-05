@@ -6,13 +6,23 @@ const Output = ({ promptElements }) => {
     let output = '';
     for (let i = 0; i < promptElements.length; i++) {
 
-      let element = promptElements[i];
-      let font_color_code = element.font_code
+      const element = promptElements[i];
+      const font_color_code = element.font_code
+      const background_color_code = element.bg_code; 
       let formatted_string = '';
 
-      // If font_code is present, wrap text with formatting.
-      if (font_color_code) {
-        formatted_string += `\\[\\e[${element.font_code}m\\]`;
+      // If font or background code is present, wrap text with formatting.
+      if (font_color_code || background_color_code) {
+        let color_code = '';
+
+        if (font_color_code && background_color_code) {
+          color_code = `${font_color_code};${background_color_code}`;
+        }
+        else {
+          color_code = font_color_code || background_color_code;
+        }
+
+        formatted_string += `\\[\\e[${color_code}m\\]`;
         formatted_string += element.prompt_text;
         formatted_string += '\\[\\e[m\\]'
       }

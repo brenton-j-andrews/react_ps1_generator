@@ -58,6 +58,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
 
       // Reseting all tiles.
       if (resetAll) {
+        setDisplayBackgroundColorPalette(false);
         return { 
           ...element, 
           font_color: font_color, 
