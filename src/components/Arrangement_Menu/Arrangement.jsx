@@ -27,14 +27,21 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     setPromptElements(updatedPromptElements);
   }
 
-  const updateElementColor = (color) => {
+  // Update element color and reset a single element to default.
+  const updateElementColor = (color, resetAll) => {
     setDisplayFontColorPalette(false);
 
     let updatedElements = promptElements.map(element => {
-      if (element.id === selectedElement.id) {
-        return { ...element, font_color:color }
+      if (resetAll) {
+        return { ...element, font_color: color }
+      } 
+
+      else {
+        if (element.id === selectedElement.id) {
+          return { ...element, font_color:color } 
+        }
+        return element;
       }
-      return element;
     })
 
     setPromptElements(updatedElements);
@@ -63,7 +70,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
 
         <div className="controls-left">
           <button className="delete-element-button" onClick={deleteElement}> Delete Tile </button>
-          <button className="delete-element-button"> Reset Tile </button>
+          <button className="delete-element-button" onClick={() => {updateElementColor('#fff', false)}}> Reset Tile </button>
         </div>
 
         <div className="controls-center">
@@ -80,7 +87,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
                 {colors.map((color, index) => {
                   return (
                     <div
-                      onClick={() => {updateElementColor(color)}} 
+                      onClick={() => {updateElementColor(color, false)}} 
                       className="color-sample" 
                       style={{ backgroundColor : color }}
                       key={index} 
@@ -102,7 +109,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
 
         <div className="controls-right">
           <button className="delete-element-button" onClick={() => {setPromptElements([])}}> Clear All </button>
-          <button className="delete-element-button"> Reset All </button>
+          <button className="delete-element-button" onClick={() => {updateElementColor('#fff', true)}}> Reset All </button>
         </div>
       </div>
     </div>
