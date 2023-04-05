@@ -1,0 +1,28 @@
+.output-wrapper {
+  width: 90%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 100px;
+}
+
+.output-textarea {
+  width: 100%;
+  border: none;
+}
+
+.copy-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.copy-button {
+  margin: 0px 5px;
+  background-color: #1d8698;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}

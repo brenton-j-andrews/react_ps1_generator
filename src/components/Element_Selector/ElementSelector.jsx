@@ -14,7 +14,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "user",
       "prompt_text" : "\\u",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -22,7 +24,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "host",
       "prompt_text" : "\\h",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -30,7 +34,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "host.domain.com",
       "prompt_text" : "\\H",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -38,7 +44,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "bash",
       "prompt_text" : "\\s",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -46,7 +54,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "4.3",
       "prompt_text" : "\\v",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -54,7 +64,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "4.3.43",
       "prompt_text" : "\\V",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -62,7 +74,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "~/dir",
       "prompt_text" : "\\w",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -70,7 +84,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "dir",
       "prompt_text" : "\\W",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -78,7 +94,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "$",
       "prompt_text" : "\\$",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
   ]
 
@@ -89,7 +107,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "1",
       "prompt_text" : "\\u",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -97,18 +117,22 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "[master]",
       "prompt_text" : "\\h",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
   ]
-  // new Date().toLocaleDateString('en-us', { weekday: "short", month: "short", day: "numeric"}).replace(',',''),
-
+  
   const date_time_elements = [
     {
       "id" : null,
       "readable" : "Date",
       "display" : format(new Date(), "E LLL d"),
+      "prompt_text" : "\\d",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -116,7 +140,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : format(new Date(), "HH:mm"),
       "prompt_text" : "\\A",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -124,7 +150,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : format(new Date(), "KK:mm a"),
       "prompt_text" : "\\@",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -132,7 +160,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : format(new Date(), "HH:mm:ss"),
       "prompt_text" : "\\t",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -140,7 +170,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" :  format(new Date(), "KK:mm:ss a"),
       "prompt_text" : "\\T",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     }
   ]
 
@@ -151,7 +183,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "@",
       "prompt_text" : "@",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -159,7 +193,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : ":",
       "prompt_text" : ":",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -167,7 +203,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "[",
       "prompt_text" : "[",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -175,7 +213,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "]",
       "prompt_text" : "]",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -183,7 +223,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "-",
       "prompt_text" : "-",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -191,7 +233,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "_",
       "prompt_text" : "_",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -199,7 +243,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : "*",
       "prompt_text" : "*",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     },
     {
       "id" : null,
@@ -207,7 +253,9 @@ const ElementSelector = ({ setPromptElements }) => {
       "display" : ">",
       "prompt_text" : ">",
       "font_color" : "#fff",
-      "bg_color" : null
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
     }
   ]
 

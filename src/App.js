@@ -3,6 +3,7 @@ import { useState } from "react";
 import ElementSelector from './components/Element_Selector/ElementSelector';
 import Arrangement from "./components/Arrangement_Menu/Arrangement";
 import Preview from "./components/Preview_Display/Preview";
+import Output from "./components/Prompt_Output/Output";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -24,7 +25,10 @@ function App() {
 
         <Preview promptElements={promptElements}/>
  
+        <Output promptElements={promptElements}/>
        </div>
+
+       <button onClick={() => {console.log(promptElements[0])}}> State Log!!! </button>
     </div>
   );
 }
