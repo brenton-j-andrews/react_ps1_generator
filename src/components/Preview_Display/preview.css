@@ -1,0 +1,15 @@
+.preview-wrapper {
+  background-color: black;
+  width: 90%;
+  height: 75px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.preview-string {
+  padding-left: 10px;
+  margin: 0px;
+  color: white;
+}

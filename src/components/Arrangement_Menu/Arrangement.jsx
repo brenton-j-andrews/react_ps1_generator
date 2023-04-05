@@ -1,7 +1,6 @@
 // This component displays elements selected from the menu. From here, the user can rearrange elements, select colors and delete elements. 
+
 import { useState, useEffect} from "react";
-
-
 
 import "./arrangement.css";
 import "../../app.css";
@@ -9,7 +8,6 @@ import "../../app.css";
 const Arrangement = ({ promptElements, setPromptElements }) => {
 
   const [ selectedElement, setSelectedElement ] = useState(promptElements[promptElements.length - 1] || null);
-  const [ displayFontColors, setDisplayFontColors ] = useState(false);
   
   // Effect: update selected element to last element in promptElements array when it is updated.
   useEffect(() => {
@@ -55,19 +53,27 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
           <button className="delete-element-button"> Reset Tile </button>
         </div>
 
-        {/* <div className="controls-center">
+        <div className="controls-center">
           <div className="font-color-selector">
-            <span> Font Color: </span>
-            <div className="font-color-dropdown-action">
-              <div className="font-color-preview"></div>
+            <span className="color-select-label"> Font Color </span>
+            
+            <div className="font-color-selector-box">
+              <i className="down-arrow"></i>
             </div>
           </div>
-        </div> */}
+
+          <div className="font-color-selector">
+            <span className="color-select-label"> BG Color </span>
+            
+            <div className="font-color-selector-box">
+              <i className="down-arrow"></i>
+            </div>
+          </div>
+        </div>
 
         <div className="controls-right">
           <button className="delete-element-button" onClick={deleteAllElements}> Clear All </button>
           <button className="delete-element-button"> Reset All </button>
-
         </div>
       </div>
     </div>
