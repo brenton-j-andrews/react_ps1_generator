@@ -15,10 +15,6 @@ const Output = ({ promptElements }) => {
         output = element.scriptCode + output;
       }
 
-      // if (i === 0) {
-      //   formatted_string += '\nexport PS1='
-      // }
-
       // If font or background code is present, wrap text with formatting.
       if (font_color_code || background_color_code) {
         let color_code = '';

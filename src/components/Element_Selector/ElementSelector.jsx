@@ -272,7 +272,7 @@ const ElementSelector = ({ setPromptElements }) => {
   ]
 
   const handleClick = (element) => {
-    element.id = crypto.randomUUID();
+    element.id = String(crypto.randomUUID());
     setPromptElements(prevState => [...prevState, element]);
   }
 

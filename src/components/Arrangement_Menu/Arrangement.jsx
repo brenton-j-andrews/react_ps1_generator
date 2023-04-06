@@ -1,6 +1,6 @@
 // This component displays elements selected from the menu. From here, the user can rearrange elements, select colors and delete elements. 
-
 import { useState, useEffect} from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 import "./arrangement.css";
 import "../../app.css";
@@ -103,23 +103,50 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     setPromptElements(updatedElements);
   }
 
+  // Update state on end of drag action.
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) return;
+    const items = Array.from(promptElements);
+    const [reorderedItems] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItems);
+    setPromptElements(items);
+  }
+
   return (
     <div className="step-wrapper">
       <h2 className='instruction-prompt'> Step 2: Arrange and add colors to your elements. </h2>
 
       <div className="arrangement-wrapper">
-        <ul className="tiles-list">
-          {promptElements.map(element => {
 
-            return (
-              <li 
-              className={element.id === selectedElement?.id ? "element-tile active" : "element-tile"}
-              key={element.id} 
-              onClick={() => {handleElementClick(element)}}
-              > {element.readable } </li>
-            )
-          })}
-        </ul>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="tiles-list" direction="horizontal">
+            {(provided) => (
+
+              <ul className="tiles-list" {...provided.droppableProps} ref={provided.innerRef}>
+
+                {promptElements.map((element, index) => {
+                  console.log(typeof(element.id));
+                  return (
+                    <Draggable key={element.id} draggableId={element.id} index={index}>
+                      {(provided) => (
+                         <li 
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          className={element.id === selectedElement?.id ? "element-tile active" : "element-tile"}
+                          key={index} 
+                          onClick={() => {handleElementClick(element)}}
+                         > {element.readable } </li>
+                      )}
+                    </Draggable>
+                  )
+                })}
+
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
+        </DragDropContext>
       </div>
 
       <div className="arrangement-controls">
