@@ -1,4 +1,7 @@
 .app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   background-image: linear-gradient(#fc945c, #fb3617);
 }
@@ -7,6 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: min(100%, 1280px);
+  height: calc(100% - 50px);
 }
 
 .app-header {
@@ -27,16 +32,30 @@
   flex-direction: column;
   align-items: center;
   width: 75%;
-  margin: 10px;
+  margin: 5px;
   padding: 10px 0px;
 }
 
 .instruction-prompt {
   color: #042054;
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .tab-content {
   background-color: #fc945c;
+}
+
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1d8698;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.footer-anchor {
+  color: #042054;
+  text-decoration: none;
 }

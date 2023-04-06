@@ -180,7 +180,7 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
         </div>
 
         <div className="controls-right">
-          <button className="delete-element-button" onClick={() => {setPromptElements([])}}> Clear All </button>
+          <button className="delete-element-button" onClick={() => {setPromptElements([])}}> Delete All </button>
           <button className="delete-element-button" onClick={() => {updateElementFontColor('#fff', true)}}> Reset All </button>
         </div>
       </div>

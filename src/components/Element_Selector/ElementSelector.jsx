@@ -105,21 +105,23 @@ const ElementSelector = ({ setPromptElements }) => {
       "id" : null,
       "readable" : "Error Code",
       "display" : "1",
-      "prompt_text" : "\\u",
+      "prompt_text" : "\\`nonzero_return\\`",
       "font_color" : "#fff",
       "font_code" : null,
       "bg_color" : null,
-      "bg_code" : null
+      "bg_code" : null,
+      "scriptCode" : 'function nonzero_return() {\n\tRETVAL=$ ?\n\t[ $RETVAL -ne 0 ] && echo "$RETVAL"\n}\n\n'
     },
     {
       "id" : null,
       "readable" : "Git Status",
       "display" : "[master]",
-      "prompt_text" : "\\h",
+      "prompt_text" : "\\`parse_git_branch\\`",
       "font_color" : "#fff",
       "font_code" : null,
       "bg_color" : null,
-      "bg_code" : null
+      "bg_code" : null,
+      "scriptCode" : '# Copy and paste the git status snippet from EzPrompt.net, formatting this would have taken forever!\n'
     },
   ]
   
@@ -252,6 +254,16 @@ const ElementSelector = ({ setPromptElements }) => {
       "readable" : ">",
       "display" : ">",
       "prompt_text" : ">",
+      "font_color" : "#fff",
+      "font_code" : null,
+      "bg_color" : null,
+      "bg_code" : null
+    },
+    {
+      "id" : null,
+      "readable" : "' '",
+      "display" : " ",
+      "prompt_text" : " ",
       "font_color" : "#fff",
       "font_code" : null,
       "bg_color" : null,

@@ -2,14 +2,22 @@ import "./output.css";
 
 const Output = ({ promptElements }) => {
 
-  const convertToString = () => {
-    let output = '';
-    for (let i = 0; i < promptElements.length; i++) {
+  const convertElementsToString = () => {
 
+    let output = '\nexport PS1=';
+    for (let i = 0; i < promptElements.length; i++) {
       const element = promptElements[i];
       const font_color_code = element.font_code
       const background_color_code = element.bg_code; 
       let formatted_string = '';
+
+      if (element.scriptCode) {
+        output = element.scriptCode + output;
+      }
+
+      // if (i === 0) {
+      //   formatted_string += '\nexport PS1='
+      // }
 
       // If font or background code is present, wrap text with formatting.
       if (font_color_code || background_color_code) {
@@ -37,14 +45,14 @@ const Output = ({ promptElements }) => {
     return output;
   }
 
-  let outputString = `export PS1="${convertToString()}"`
+  let outputString = convertElementsToString()
 
   return (
     <div className="step-wrapper">
       <h2 className='instruction-prompt'> Step 4: Paste the snippet below into your bashrc document. </h2>
 
       <div className="output-wrapper"> 
-        <textarea className="output-textarea" id="output" type="text" value={outputString} />
+        <textarea readOnly className="output-textarea" id="output" type="text" value={outputString} />
       </div>
     </div>
   )

@@ -14,11 +14,12 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <div className="app-container">
-        <header className='app-header'>
-          Bash PS1 Prompt Generator
-        </header>
 
+      <header className='app-header'>
+        Bash PS1 Prompt Generator
+      </header>
+
+      <div className="app-container">
         <ElementSelector setPromptElements={setPromptElements}/>
 
         <Arrangement promptElements={promptElements} setPromptElements={setPromptElements}/>
@@ -26,9 +27,17 @@ function App() {
         <Preview promptElements={promptElements}/>
  
         <Output promptElements={promptElements}/>
-       </div>
+      </div>
 
-       <button onClick={() => {console.log(promptElements[0])}}> State Log!!! </button>
+       <div className="app-footer">
+        <span className="footer-line"> 
+          Copyright {new Date().getFullYear()} - Brenton Andrews - <a className="footer-anchor" href="https://github.com/"> Github </a>
+        </span>
+        <br />
+        <span className="footer-line"> 
+          Error function, Git function and design sourced from <a className="footer-anchor" href="https://ezprompt.net/"> EzPrompt.net</a>
+        </span>
+       </div>
     </div>
   );
 }

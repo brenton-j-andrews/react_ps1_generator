@@ -9,6 +9,7 @@
 .output-textarea {
   width: 100%;
   border: none;
+  height: 500px;
 }
 
 .copy-button-wrapper {
