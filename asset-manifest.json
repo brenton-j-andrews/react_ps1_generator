@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react_ps1_generator/static/css/main.4b84f29a.css",
+    "main.js": "/react_ps1_generator/static/js/main.c048b744.js",
+    "static/media/gunplay 3d.otf": "/react_ps1_generator/static/media/gunplay 3d.832f9b3bdcbf6bdabd7d.otf",
+    "index.html": "/react_ps1_generator/index.html",
+    "main.4b84f29a.css.map": "/react_ps1_generator/static/css/main.4b84f29a.css.map",
+    "main.c048b744.js.map": "/react_ps1_generator/static/js/main.c048b744.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b84f29a.css",
+    "static/js/main.c048b744.js"
+  ]
+}
