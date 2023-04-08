@@ -1,3 +1,7 @@
+/**
+ * The Preview component displays a preview of the ps1 prompt as it would appear in a bash terminal.
+ */
+
 import './preview.css';
 
 const Preview = ({ promptElements }) => {

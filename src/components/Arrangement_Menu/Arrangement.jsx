@@ -1,4 +1,8 @@
-// This component displays elements selected from the menu. From here, the user can rearrange elements, select colors and delete elements. 
+/*
+ * The Arrangement component displays elements selected from the menu as draggable tiles.
+ * From here, the user can rearrange and delete element tiles and modify their color values.
+ */
+
 import { useState, useEffect} from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
@@ -25,10 +29,10 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     "#fff" : ["37", "47"]
   }
 
-  // Effect: update selected element to last element in promptElements array when it is updated.
+  // Effect: on change of promptElements length, toggle last element as selectedElement.
   useEffect(() => {
     setSelectedElement(promptElements[promptElements.length - 1]);
-  }, [ promptElements ])
+  }, [ promptElements.length ])
 
   const handleElementClick = (element) => {
     setSelectedElement(element);

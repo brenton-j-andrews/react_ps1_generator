@@ -1,3 +1,8 @@
+/**
+ * The Output component generates the code snippet to be placed in the 
+ * .bashrc file which will generate the ps1 prompt shown the the preview.
+ */
+
 import "./output.css";
 
 const Output = ({ promptElements }) => {

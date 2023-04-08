@@ -1,6 +1,10 @@
-// This component contains the menu from which you can select elements for your prompt.
-import { format } from "date-fns";
+/*
+ * The ElementSelector component allows the user to select element tiles for their prompt
+ * and stores the data associated with each tile.
+ */ 
+
 import { Tab, Tabs } from "react-bootstrap";
+import { format } from "date-fns";
 
 import "../../app.css";
 import './element_selector.css';
@@ -283,7 +287,6 @@ const ElementSelector = ({ setPromptElements }) => {
       <div className="element-selector-menu">
         
          <Tabs defaultActiveKey="basic_elements" className="tabs-selector" justify>
-
           <Tab eventKey="basic_elements" title="Basic Elements">
             <ul className="elements-list">
               {basic_elements.map(element => {
