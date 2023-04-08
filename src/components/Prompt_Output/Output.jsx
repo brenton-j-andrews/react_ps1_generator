@@ -5,6 +5,7 @@ const Output = ({ promptElements }) => {
   const convertElementsToString = () => {
 
     let output = '\nexport PS1=';
+    
     for (let i = 0; i < promptElements.length; i++) {
       const element = promptElements[i];
       const font_color_code = element.font_code

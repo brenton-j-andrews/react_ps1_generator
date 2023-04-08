@@ -285,7 +285,6 @@ const ElementSelector = ({ setPromptElements }) => {
          <Tabs defaultActiveKey="basic_elements" className="tabs-selector" justify>
 
           <Tab eventKey="basic_elements" title="Basic Elements">
-
             <ul className="elements-list">
               {basic_elements.map(element => {
                 return (

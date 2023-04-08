@@ -4,29 +4,38 @@
   min-height: 175px;
 }
 
+/* Tab Styling... */
+.tabs-selector {
+  border-radius: 5px;
+  background-color: #1d8698;
+  border: none !important;
+}
+
 .nav-tabs {
+  border-bottom: none;
+}
+
+.nav {
   border: none;
 }
 
-.nav-item {
-  margin: 0px 5px;
-  background-color: #1d8698;
-  border-radius: 5px;
-  height: 45px;
+.tab-content {
+  margin-top: 10px;
 }
 
-.nav-item > button {
-  background-color: #1d8698;
-  color: white;
-  border-radius: 5px;
-  height: 5px;
-
+.nav-link {
+  color: white !important;
+  background-color: #1d8698 !important;
+  border: none !important;
+  height: 100%;
 }
 
-.nav-link > button {
-  background-color: #1d8698;
+.active {
+  background-color: white !important;
+  color: black !important;
 }
 
+/* Tab Contents */
 .elements-list {
   display: flex;
   flex-wrap: wrap;

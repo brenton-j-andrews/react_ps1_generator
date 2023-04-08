@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.active {
+.active-tile {
   color: white;
   background-color: #1d8698;
 }
