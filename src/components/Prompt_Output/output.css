@@ -3,13 +3,13 @@
   background-color: white;
   padding: 10px;
   border-radius: 5px;
-  min-height: 100px;
+  height: 150px;
 }
 
 .output-textarea {
   width: 100%;
   border: none;
-  height: 500px;
+  height: 125px;
 }
 
 .copy-button-wrapper {

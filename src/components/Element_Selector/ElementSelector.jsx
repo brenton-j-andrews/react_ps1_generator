@@ -121,7 +121,7 @@ const ElementSelector = ({ setPromptElements }) => {
       "font_code" : null,
       "bg_color" : null,
       "bg_code" : null,
-      "scriptCode" : '# Copy and paste the git status snippet from EzPrompt.net, formatting this would have taken forever!\n'
+      "scriptCode" : '# Copy and paste the git status snippet from EzPrompt.net, formatting this would have taken forever!\n\n'
     },
   ]
   
@@ -281,6 +281,7 @@ const ElementSelector = ({ setPromptElements }) => {
       <h2 className='instruction-prompt'> Step 1: Select elements to use in your prompt. </h2>
 
       <div className="element-selector-menu">
+        
          <Tabs defaultActiveKey="basic_elements" className="tabs-selector" justify>
 
           <Tab eventKey="basic_elements" title="Basic Elements">
