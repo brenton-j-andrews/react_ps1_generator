@@ -12,7 +12,7 @@ import "../../app.css";
 const Arrangement = ({ promptElements, setPromptElements }) => {
 
   const [ selectedElement, setSelectedElement ] = useState(promptElements[promptElements.length - 1] || null);
-
+  
   const [ displayFontColorPalette, setDisplayFontColorPalette ] = useState(false);
   const [ displayBackgroundColorPalette, setDisplayBackgroundColorPalette ] = useState(false);
 
@@ -29,10 +29,14 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     "#fff" : ["37", "47"]
   }
 
-  // Effect: on change of promptElements length, toggle last element as selectedElement.
+  // Effect: on change of promptElements, toggle last element as selectedElement.
   useEffect(() => {
-    setSelectedElement(promptElements[promptElements.length - 1]);
-  }, [ promptElements.length ])
+    setSelectedElement(selectedElement || promptElements[promptElements.length - 1]);
+  }, [ promptElements, selectedElement ])
+
+  // useEffect(() => {
+  //   setUpdateColorDisplay(false);
+  // }, [ updateColorDisplay ])
 
   const handleElementClick = (element) => {
     setSelectedElement(element);
@@ -44,21 +48,27 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
   }
 
   const updateElementColor = (new_font_color, new_bg_color) => {
+
     setDisplayFontColorPalette(false);
     setDisplayBackgroundColorPalette(false);
 
-    let updatedElements = promptElements.map(element => {
+    let selectedIndex = null;
+
+    let updatedElements = promptElements.map((element, index) => {
       if (element.id === selectedElement.id) {
-        return { ...element, 
+        selectedIndex = index;
+        return {
+          ...element,
           font_color: new_font_color ? new_font_color : element.font_color, 
-          font_code: new_font_color ? colorCodes[new_font_color[0]] : element.font_code,
+          font_code: new_font_color ? colorCodes[new_font_color][0] : element.font_code,
           bg_color: new_bg_color ? new_bg_color : element.bg_color,
-          bg_code: new_bg_color ? colorCodes[new_bg_color[1]] : element.bg_code
-        } 
+          bg_code: new_bg_color ? colorCodes[new_bg_color][1] : element.bg_code
+        }
       }
       return element;
     })
-    
+
+    setSelectedElement(updatedElements[selectedIndex]);
     setPromptElements(updatedElements);
   }
 
@@ -76,7 +86,6 @@ const Arrangement = ({ promptElements, setPromptElements }) => {
     setPromptElements(resetElements);
   }
 
-  // Update state on end of drag action.
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
     const items = Array.from(promptElements);

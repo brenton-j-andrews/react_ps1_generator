@@ -9,8 +9,10 @@ const Output = ({ promptElements }) => {
 
   const convertElementsToString = () => {
 
-    let output = '\nexport PS1=';
+    let formatting_snippet = "";
     
+    let output = `\nexport PS1=`;
+
     for (let i = 0; i < promptElements.length; i++) {
       const element = promptElements[i];
       const font_color_code = element.font_code
@@ -41,8 +43,11 @@ const Output = ({ promptElements }) => {
         formatted_string += element.prompt_text
       }
 
-      output = output.concat(formatted_string);
+      formatting_snippet = formatting_snippet.concat(formatted_string);
     }
+
+    formatting_snippet = '"' + formatting_snippet + '"';
+    output = output.concat(formatting_snippet);
 
     return output;
   }
