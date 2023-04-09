@@ -1,5 +1,8 @@
 # React Bash PS1 Prompt Generator 
 
+![Demo_Image](ps1_gen_image.png)
+
+
 View the project live [here](https://brenton-j-andrews.github.io/react_ps1_generator/).
 
 -----
